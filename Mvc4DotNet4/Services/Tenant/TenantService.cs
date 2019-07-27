@@ -1,10 +1,6 @@
-﻿using Mvc4DotNet4.Services.Tenant;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Web;
+﻿using System.Web;
 using System.Web.Routing;
+using Mvc4DotNet4.Services.Tenant;
 
 namespace Mvc4DotNet4.Services
 {
@@ -16,21 +12,21 @@ namespace Mvc4DotNet4.Services
 
     public class TenantService : ITenantService
     {
-        private ITenantConfiguration _tenantConfiguration;
+        private ITenantSettings _tenantSettings;
 
-        public TenantService(ITenantConfiguration tenantConfiguration)
+        public TenantService(ITenantSettings tenantSettings)
         {
-            _tenantConfiguration = tenantConfiguration;
+            _tenantSettings = tenantSettings;
 
         }
         public void GetTenant()
         {
-            _tenantConfiguration.Log(System.Web.HttpContext.Current.Request.Url.ToString());
+            _tenantSettings.Log(HttpContext.Current.Request.Url.ToString());
         }
 
         public void GetTenant(string methodName, RouteData routeData)
         {
-            _tenantConfiguration.Log(methodName, routeData);
+            _tenantSettings.Log(methodName, routeData);
         }
     }
 }
