@@ -36,6 +36,7 @@ namespace Mvc4DotNet4
         {
             container.RegisterType<ILookupService, LookupService>();
             container.RegisterType<ITenantService, TenantService>();
+            container.RegisterType<IMyLogger, MyLogger>();
 
             container.RegisterInstance((ITenantSettings)ConfigurationManager.GetSection(TenantSettings.SectionName));
         }

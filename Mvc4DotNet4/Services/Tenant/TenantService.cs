@@ -13,20 +13,22 @@ namespace Mvc4DotNet4.Services
     public class TenantService : ITenantService
     {
         private ITenantSettings _tenantSettings;
+        private IMyLogger _myLogger;
 
-        public TenantService(ITenantSettings tenantSettings)
+        public TenantService(ITenantSettings tenantSettings, IMyLogger myLogger)
         {
             _tenantSettings = tenantSettings;
+            _myLogger = myLogger;
 
         }
         public void GetTenant()
         {
-            _tenantSettings.Log(HttpContext.Current.Request.Url.ToString());
+            _myLogger.Log(HttpContext.Current.Request.Url.ToString());
         }
 
         public void GetTenant(string methodName, RouteData routeData)
         {
-            _tenantSettings.Log(methodName, routeData);
+            _myLogger.Log(methodName, routeData);
         }
     }
 }
