@@ -11,21 +11,23 @@ namespace Mvc4DotNet4.Filters
     public class MyActionFilter : ActionFilterAttribute
     {
         private ITenantService _tenantService;
+        private IMyLogger _myLogger;
 
-        public MyActionFilter(ITenantService tenantService)
+        public MyActionFilter(ITenantService tenantService, IMyLogger myLogger)
         {
             _tenantService = tenantService;
+            _myLogger = myLogger;
         }
 
         public override void OnActionExecuting(ActionExecutingContext filterContext)
         {
-            _tenantService.GetTenant("OnActionExecuting", filterContext.RouteData);
+            _myLogger.Log("OnActionExecuting", filterContext.RouteData);
             _tenantService.GetTenant();
         }
 
         public override void OnActionExecuted(ActionExecutedContext filterContext)
         {
-            _tenantService.GetTenant("OnActionExecuted", filterContext.RouteData);
+            _myLogger.Log("OnActionExecuted", filterContext.RouteData);
         }
     }
 }

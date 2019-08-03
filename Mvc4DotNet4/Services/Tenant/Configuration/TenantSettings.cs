@@ -25,6 +25,7 @@ namespace Mvc4DotNet4.Services.Tenant
         public TenantSettings()
         {
             base[TenantPortsProperty] = new KeyValueConfigurationCollection();
+//            base[TenantPortsProperty] = new TenantPorts();
         }
 
         //public static TenantSettings Settings
@@ -40,10 +41,41 @@ namespace Mvc4DotNet4.Services.Tenant
         }
 
         [ConfigurationProperty(TenantPortsProperty)]
+//      public TenantPort TenantPorts
         public KeyValueConfigurationCollection TenantPorts
         {
+//          get { return ((TenantPort)base[TenantPortsProperty]); }
             get { return ((KeyValueConfigurationCollection)base[TenantPortsProperty]); }
             set { this[TenantPortsProperty] = value; }
+        }
+    }
+
+    public class TenantPorts : KeyValueConfigurationCollection
+    {
+        public TenantPorts()
+        {
+
+        }
+
+    }
+
+    public class TenantPort : KeyValueConfigurationElement
+    {
+        public TenantPort(string key, string value) : base(key, value)
+        {
+        }
+
+        [ConfigurationProperty("key", Options = ConfigurationPropertyOptions.IsKey, DefaultValue = "")]
+        public new string Key
+        {
+            get { return (string)this["key"]; }
+        }
+
+        [ConfigurationProperty("value", DefaultValue = "")]
+        public new string Value
+        {
+            get { return (string)this["value"]; }
+            set { this["value"] = value; }
         }
     }
 }

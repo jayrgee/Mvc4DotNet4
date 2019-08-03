@@ -10,7 +10,10 @@ namespace Mvc4DotNet4
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
             filters.Add(new HandleErrorAttribute());
-            filters.Add(new MyActionFilter(DependencyResolver.Current.GetService<TenantService>()));
+            filters.Add(new MyActionFilter(
+                DependencyResolver.Current.GetService<ITenantService>(),
+                DependencyResolver.Current.GetService<IMyLogger>()
+                ));
         }
     }
 }
