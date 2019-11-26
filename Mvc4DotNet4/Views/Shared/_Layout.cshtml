@@ -12,7 +12,7 @@
         <header>
             <div class="content-wrapper">
                 <div class="float-left">
-                    <p class="site-title">@Html.ActionLink("your logo here", "Index", "Home")</p>
+                    <p class="site-title">@Html.RouteLink("Home", "Default", new { controller = "Home" })</p>
                 </div>
                 <div class="float-right">
                     <section id="login">
@@ -20,9 +20,10 @@
                     </section>
                     <nav>
                         <ul id="menu">
-                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                            <li>@Html.ActionLink("About", "About", "Home")</li>
-                            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                            <li>@Html.RouteLink("Home", "Default", new { controller = "Home" })</li>
+                            <li>@Html.RouteLink("Guitars", new { area = "Guitars", controller = "Default" })</li>
+                            <li>@Html.RouteLink("Contact", "Default", new { controller = "Home" })</li>
+                            <li>@Html.RouteLink("About", "Default", new { controller = "Home" })</li>
                         </ul>
                     </nav>
                 </div>
