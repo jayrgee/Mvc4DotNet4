@@ -13,8 +13,10 @@ namespace Mvc4DotNet4.Areas.Guitars.Controllers
 
         public ActionResult Index()
         {
+#if (DEBUG)
+            ViewBag.EnableBrowserSync = true;
+#endif
             return View();
         }
-
     }
 }
