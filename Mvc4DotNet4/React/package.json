@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "webpack --mode development --watch",
-    "test" : "jest",
+    "test": "jest --watch",
     "build": "webpack --mode production"
   },
   "devDependencies": {
@@ -24,5 +24,10 @@
   "dependencies": {
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
+  },
+  "jest": {
+    "roots": [
+      "<rootDir>/src/"
+    ]
   }
 }

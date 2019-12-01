@@ -229,7 +229,6 @@
     <Content Include="package.json" />
     <Content Include="webpack.config.js" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
-    <Content Include="Scripts\Home\react\index.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
     <Content Include="Scripts\jquery-1.7.1.min.js" />
     <Content Include="Scripts\jquery-ui-1.8.20.js" />
@@ -284,6 +283,7 @@
     <Folder Include="Areas\ReactUi\Views\Shared\" />
     <Folder Include="Helpers\" />
     <Folder Include="Models\" />
+    <Folder Include="Scripts\Home\react\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
