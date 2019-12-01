@@ -152,8 +152,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="App_Start\Bootstrapper.cs" />
-    <Compile Include="Areas\Guitars\Controllers\DefaultController.cs" />
-    <Compile Include="Areas\Guitars\GuitarsAreaRegistration.cs" />
+    <Compile Include="Areas\ReactUi\Controllers\DefaultController.cs" />
+    <Compile Include="Areas\ReactUi\ReactUiAreaRegistration.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Filters\MyActionFilter.cs" />
     <Compile Include="Global.asax.cs">
@@ -223,9 +223,9 @@
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="Areas\Guitars\Views\Web.config" />
-    <Content Include="Areas\Guitars\Views\Default\Index.cshtml" />
-    <Content Include="Areas\Guitars\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\ReactUi\Views\Web.config" />
+    <Content Include="Areas\ReactUi\Views\Default\Index.cshtml" />
+    <Content Include="Areas\ReactUi\Views\_ViewStart.cshtml" />
     <Content Include="package.json" />
     <Content Include="webpack.config.js" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
@@ -280,8 +280,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Guitars\Models\" />
-    <Folder Include="Areas\Guitars\Views\Shared\" />
+    <Folder Include="Areas\ReactUi\Models\" />
+    <Folder Include="Areas\ReactUi\Views\Shared\" />
     <Folder Include="Helpers\" />
     <Folder Include="Models\" />
   </ItemGroup>

@@ -4,12 +4,12 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Mvc4DotNet4.Areas.Guitars.Controllers
+namespace Mvc4DotNet4.Areas.ReactUi.Controllers
 {
     public class DefaultController : Controller
     {
         //
-        // GET: /Guitars/Default/
+        // GET: /ReactUi/Default/
 
         public ActionResult Index()
         {
